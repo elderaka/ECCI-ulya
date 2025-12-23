@@ -186,11 +186,11 @@ onMounted(async () => {
       sources: {
         'nations': {
           type: 'vector',
-          url: 'pmtiles://http://localhost:3000/tiles/nation_wgs84.pmtiles'
+          url: `pmtiles://${import.meta.env.VITE_TILES_BASE_URL}/tiles/nation_wgs84.pmtiles`
         },
         'las': {
           type: 'vector',
-          url: 'pmtiles://http://localhost:3000/tiles/local_authorities_wgs84.pmtiles'
+          url: `pmtiles://${import.meta.env.VITE_TILES_BASE_URL}/tiles/local_authorities_wgs84.pmtiles`
         }
       },
       layers: [
