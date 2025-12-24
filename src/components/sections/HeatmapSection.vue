@@ -170,18 +170,6 @@ const switchMapType = (type: 'nation' | 'localAuthority') => {
 onMounted(async () => {
   if (!mapContainer.value) return
 
-  // Intercept global fetch to add ngrok bypass as query parameter
-  const originalFetch = window.fetch
-  window.fetch = async (input: RequestInfo | URL, init?: RequestInit): Promise<Response> => {
-    let url = typeof input === 'string' ? input : input instanceof URL ? input.href : input.url
-    if (url.includes('ngrok')) {
-      // Add query parameter instead of header to bypass ngrok warning
-      url = url + (url.includes('?') ? '&' : '?') + 'ngrok-skip-browser-warning=true'
-      return originalFetch(url, init)
-    }
-    return originalFetch(input, init)
-  }
-
   // Load CSV data
   const areaData = await loadCSVData()
   const dataMap = new Map(areaData.map(d => [d.small_area, d]))
