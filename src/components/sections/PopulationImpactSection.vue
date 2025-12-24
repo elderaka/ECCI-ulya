@@ -9,28 +9,28 @@
       
       <!-- Animated Counter Cards -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        <div class="bg-gradient-to-br from-air-quality to-air-quality/70 text-white rounded-2xl p-8 shadow-2xl transform hover:scale-105 transition-transform duration-300">
-          <div class="text-5xl md:text-6xl font-bold mb-4">
+        <div class="bg-air-quality/10 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border-2 border-air-quality/30 transform hover:scale-105 transition-transform duration-300">
+          <div class="text-5xl md:text-6xl font-bold mb-4 text-air-quality">
             {{ animatedPeople }}M
           </div>
-          <div class="text-xl font-semibold mb-2">{{ t('sectionPopulation.highBenefit.label') }}</div>
-          <p class="text-white/90">{{ t('sectionPopulation.unit') }}</p>
+          <div class="text-xl font-semibold mb-2 text-gray-900">{{ t('sectionPopulation.highBenefit.label') }}</div>
+          <p class="text-gray-700">{{ t('sectionPopulation.unit') }}</p>
         </div>
         
-        <div class="bg-gradient-to-br from-physical-activity to-physical-activity/70 text-white rounded-2xl p-8 shadow-2xl transform hover:scale-105 transition-transform duration-300">
-          <div class="text-5xl md:text-6xl font-bold mb-4">
+        <div class="bg-physical-activity/10 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border-2 border-physical-activity/30 transform hover:scale-105 transition-transform duration-300">
+          <div class="text-5xl md:text-6xl font-bold mb-4 text-physical-activity">
             £{{ animatedBenefit }}B
           </div>
-          <div class="text-xl font-semibold mb-2">{{ t('sectionPopulation.mediumBenefit.label') }}</div>
-          <p class="text-white/90">Total Economic Benefit</p>
+          <div class="text-xl font-semibold mb-2 text-gray-900">{{ t('sectionPopulation.mediumBenefit.label') }}</div>
+          <p class="text-gray-700">Total Economic Benefit</p>
         </div>
         
-        <div class="bg-gradient-to-br from-congestion to-congestion/70 text-white rounded-2xl p-8 shadow-2xl transform hover:scale-105 transition-transform duration-300">
-          <div class="text-5xl md:text-6xl font-bold mb-4">
+        <div class="bg-congestion/10 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border-2 border-congestion/30 transform hover:scale-105 transition-transform duration-300">
+          <div class="text-5xl md:text-6xl font-bold mb-4 text-congestion">
             {{ animatedPositive }}%
           </div>
-          <div class="text-xl font-semibold mb-2">{{ t('sectionPopulation.lowBenefit.label') }}</div>
-          <p class="text-white/90">Areas with Positive Benefit</p>
+          <div class="text-xl font-semibold mb-2 text-gray-900">{{ t('sectionPopulation.lowBenefit.label') }}</div>
+          <p class="text-gray-700">Areas with Positive Benefit</p>
         </div>
       </div>
       

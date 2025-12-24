@@ -15,8 +15,8 @@
         {{ t('hero.hook') }}
       </p>
       
-      <div class="bg-air-quality/10 backdrop-blur-sm rounded-2xl px-8 py-6 mb-10 animate-fade-in-delay-3 border-2 border-air-quality/30">
-        <p class="text-xl md:text-2xl font-bold text-air-quality italic">
+      <div class="bg-gradient-to-br from-air-quality to-air-quality/70 text-white rounded-2xl px-8 py-6 mb-10 animate-fade-in-delay-3 shadow-2xl">
+        <p class="text-xl md:text-2xl font-bold italic">
           {{ t('hero.tagline') }}
         </p>
       </div>
