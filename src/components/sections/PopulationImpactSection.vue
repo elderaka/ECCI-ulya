@@ -35,18 +35,18 @@
       </div>
       
       <!-- Comparison Visualization -->
-      <div class="bg-white rounded-2xl shadow-xl p-8 mb-12">
+      <div class="bg-white/60 backdrop-blur-sm rounded-2xl shadow-2xl border-2 border-gray-200 p-8 mb-12">
         <h3 class="text-3xl font-bold text-center mb-8">Population Distribution</h3>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="text-center p-6 bg-green-50 rounded-xl border-2 border-green-200">
+          <div class="text-center p-6 bg-white/60 backdrop-blur-sm rounded-xl border-2 border-green-300">
             <div class="text-6xl mb-4 text-green-600"><i class="fas fa-smile-beam"></i></div>
             <div class="text-4xl font-bold text-green-700 mb-2">{{ benefitAreas.toLocaleString() }}</div>
             <div class="text-lg font-semibold text-gray-700 mb-2">Areas with Positive Benefit</div>
             <div class="text-3xl font-bold text-green-600">{{ benefitPopulation.toFixed(1) }}M people</div>
           </div>
           
-          <div class="text-center p-6 bg-red-50 rounded-xl border-2 border-red-200">
+          <div class="text-center p-6 bg-white/60 backdrop-blur-sm rounded-xl border-2 border-red-300">
             <div class="text-6xl mb-4 text-red-600"><i class="fas fa-frown"></i></div>
             <div class="text-4xl font-bold text-red-700 mb-2">{{ lossAreas.toLocaleString() }}</div>
             <div class="text-lg font-semibold text-gray-700 mb-2">Areas with Negative Benefit</div>
@@ -57,8 +57,8 @@
       
       <!-- Insight Box -->
       <div class="text-center">
-        <div class="bg-gradient-to-r from-air-quality/10 via-physical-activity/10 to-congestion/10 rounded-2xl p-8 max-w-4xl mx-auto border-2 border-physical-activity/30">
-          <p class="text-lg text-gray-700">{{ t('sectionPopulation.insight') }}</p>
+        <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-8 max-w-4xl mx-auto border-2 border-gray-200 shadow-2xl">
+          <p class="text-lg text-gray-800">{{ t('sectionPopulation.insight') }}</p>
         </div>
       </div>
     </div>
