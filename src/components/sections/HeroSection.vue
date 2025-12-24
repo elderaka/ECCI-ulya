@@ -15,7 +15,7 @@
         {{ t('hero.hook') }}
       </p>
       
-      <div class="glass px-8 py-6 mb-10 animate-fade-in-delay-3 rounded-2xl">
+      <div class="themed-glass px-8 py-6 mb-10 animate-fade-in-delay-3 rounded-2xl">
         <p class="text-xl md:text-2xl font-bold italic text-gray-900">
           {{ t('hero.tagline') }}
         </p>

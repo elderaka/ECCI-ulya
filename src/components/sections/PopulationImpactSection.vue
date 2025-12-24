@@ -57,7 +57,7 @@
       
       <!-- Insight Box -->
       <div class="text-center">
-        <div class="glass p-8 max-w-4xl mx-auto">
+        <div class="themed-glass p-8 max-w-4xl mx-auto">
           <p class="text-lg text-gray-900">{{ t('sectionPopulation.insight') }}</p>
         </div>
       </div>

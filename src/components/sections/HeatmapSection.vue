@@ -126,25 +126,56 @@ const selectedArea = ref<{
   netBenefit?: number
 } | null>(null)
 
-const legendItems = [
-  { color: '#006837', label: '> £5M (High)' },
-  { color: '#31a354', label: '£2-5M' },
-  { color: '#78c679', label: '£1-2M' },
-  { color: '#c2e699', label: '£0-1M' },
-  { color: '#ffffcc', label: '£-1-0M' },
-  { color: '#fd8d3c', label: '£-2 to -1M' },
-  { color: '#e31a1c', label: '< -£2M (Low)' }
-]
+const legendItems = ref([
+  { color: '#006837', label: 'Loading...' },
+  { color: '#31a354', label: 'Loading...' },
+  { color: '#78c679', label: 'Loading...' },
+  { color: '#c2e699', label: 'Loading...' },
+  { color: '#ffffcc', label: 'Loading...' },
+  { color: '#fd8d3c', label: 'Loading...' },
+  { color: '#e31a1c', label: 'Loading...' }
+])
 
-// Color scale function
-const getColor = (netBenefit: number): string => {
-  if (netBenefit >= 5) return '#006837'
-  if (netBenefit >= 2) return '#31a354'
-  if (netBenefit >= 1) return '#78c679'
-  if (netBenefit >= 0) return '#c2e699'
-  if (netBenefit >= -1) return '#ffffcc'
-  if (netBenefit >= -2) return '#fd8d3c'
-  return '#e31a1c'
+// Dynamic color scale function - adapts to data range
+const createColorScale = (values: number[]) => {
+  if (values.length === 0) return (n: number) => '#cccccc'
+  
+  // Sort values to find quantiles
+  const sorted = [...values].sort((a, b) => a - b)
+  const min = sorted[0]
+  const max = sorted[sorted.length - 1]
+  const median = sorted[Math.floor(sorted.length / 2)]
+  
+  // Create 7 quantile breaks
+  const q1 = sorted[Math.floor(sorted.length * 0.15)]
+  const q2 = sorted[Math.floor(sorted.length * 0.30)]
+  const q3 = sorted[Math.floor(sorted.length * 0.45)]
+  const q4 = median
+  const q5 = sorted[Math.floor(sorted.length * 0.70)]
+  const q6 = sorted[Math.floor(sorted.length * 0.85)]
+  
+  console.log(`📊 Color scale: min=${min.toFixed(0)}, max=${max.toFixed(0)}, median=${median.toFixed(0)}`)
+  
+  // Update legend with actual values
+  legendItems.value = [
+    { color: '#006837', label: `> £${Math.round(q6)}M` },
+    { color: '#31a354', label: `£${Math.round(q5)}-${Math.round(q6)}M` },
+    { color: '#78c679', label: `£${Math.round(q4)}-${Math.round(q5)}M` },
+    { color: '#c2e699', label: `£${Math.round(q3)}-${Math.round(q4)}M` },
+    { color: '#ffffcc', label: `£${Math.round(q2)}-${Math.round(q3)}M` },
+    { color: '#fd8d3c', label: `£${Math.round(q1)}-${Math.round(q2)}M` },
+    { color: '#e31a1c', label: `< £${Math.round(q1)}M` }
+  ]
+  
+  return (netBenefit: number): string => {
+    if (netBenefit >= q6) return '#006837'
+    if (netBenefit >= q5) return '#31a354'
+    if (netBenefit >= q4) return '#78c679'
+    if (netBenefit >= q3) return '#c2e699'
+    if (netBenefit >= q2) return '#ffffcc'
+    if (netBenefit >= q1) return '#fd8d3c'
+    return '#e31a1c'
+  }
 }
 
 const switchMapType = (type: 'nation' | 'localAuthority') => {
@@ -345,37 +376,72 @@ onMounted(async () => {
       if (map) map.getCanvas().style.cursor = ''
     })
 
-    // Apply colors based on aggregated data for nations
-    const nationColorExpression: any = ['match', ['get', 'lookups_nation']]
+    // Real-time heatmap coloring algorithm with dynamic scaling
+    console.log('🎨 Starting real-time heatmap coloring...')
+    
+    // Aggregate data by nation
     const nationAggregates = new Map<string, number>()
-    
     areaData.forEach(d => {
-      const current = nationAggregates.get(d.nation) || 0
-      nationAggregates.set(d.nation, current + d.net_benefit_million_gbp)
+      if (d.nation) {
+        const current = nationAggregates.get(d.nation) || 0
+        nationAggregates.set(d.nation, current + d.net_benefit_million_gbp)
+      }
     })
     
+    console.log('📊 Nation aggregates:', Array.from(nationAggregates.entries()))
+    
+    // Create dynamic color scale for nations
+    const nationValues = Array.from(nationAggregates.values())
+    const getNationColor = createColorScale(nationValues)
+    
+    // Build color expression for nations
+    const nationColorExpression: any = ['case']
     nationAggregates.forEach((netBenefit, nation) => {
-      nationColorExpression.push(nation, getColor(netBenefit))
+      const color = getNationColor(netBenefit)
+      nationColorExpression.push(
+        ['==', ['get', 'lookups_nation'], nation],
+        color
+      )
+      console.log(`  🎨 ${nation}: £${netBenefit.toFixed(2)}M → ${color}`)
     })
-    nationColorExpression.push('#cccccc') // Default
+    nationColorExpression.push('#cccccc') // Default fallback
     
     map.setPaintProperty('nations-fill', 'fill-color', nationColorExpression)
 
-    // Apply colors based on aggregated data for local authorities
-    const laColorExpression: any = ['match', ['get', 'lookups_local_authority']]
+    // Aggregate data by local authority
     const laAggregates = new Map<string, number>()
-    
     areaData.forEach(d => {
-      const current = laAggregates.get(d.local_authority) || 0
-      laAggregates.set(d.local_authority, current + d.net_benefit_million_gbp)
+      if (d.local_authority) {
+        const current = laAggregates.get(d.local_authority) || 0
+        laAggregates.set(d.local_authority, current + d.net_benefit_million_gbp)
+      }
     })
     
-    laAggregates.forEach((netBenefit, la) => {
-      laColorExpression.push(la, getColor(netBenefit))
+    console.log('📊 LA aggregates (showing range):', {
+      min: Math.min(...laAggregates.values()).toFixed(2),
+      max: Math.max(...laAggregates.values()).toFixed(2),
+      count: laAggregates.size,
+      sample: Array.from(laAggregates.entries()).slice(0, 5)
     })
-    laColorExpression.push('#cccccc') // Default
+    
+    // Create dynamic color scale for LAs (separate scale from nations)
+    const laValues = Array.from(laAggregates.values())
+    const getLAColor = createColorScale(laValues)
+    
+    // Build color expression for local authorities
+    const laColorExpression: any = ['case']
+    laAggregates.forEach((netBenefit, la) => {
+      const color = getLAColor(netBenefit)
+      laColorExpression.push(
+        ['==', ['get', 'lookups_local_authority'], la],
+        color
+      )
+    })
+    laColorExpression.push('#cccccc') // Default fallback
     
     map.setPaintProperty('las-fill', 'fill-color', laColorExpression)
+    
+    console.log('✅ Real-time heatmap with dynamic color scaling applied!')
 
     console.log('🗺️ Heatmap loaded with', areaData.length, 'areas')
     

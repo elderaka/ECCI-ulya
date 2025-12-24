@@ -102,16 +102,22 @@
     @apply text-xl md:text-2xl lg:text-3xl font-medium mb-4 text-gray-700;
   }
 
-  /* Override DaisyUI .glass with custom themed glassmorphism */
-  .glass {
+  /* Custom themed glassmorphism - project colors */
+  .themed-glass {
     position: relative;
-    border-radius: 1rem;
-    /* Blend of project theme colors: air-quality (#2E86AB), physical-activity (#06A77D) */
-    background: linear-gradient(135deg, rgba(46, 134, 171, 0.12) 0%, rgba(6, 167, 125, 0.10) 100%);
-    box-shadow: 0 8px 32px rgba(46, 134, 171, 0.15);
-    backdrop-filter: blur(12px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
-    border: 1px solid rgba(46, 134, 171, 0.25);
+    /* Vibrant gradient: air-quality (#2E86AB), physical-activity (#06A77D), congestion (#F18F01) */
+    background: linear-gradient(135deg, 
+      rgba(46, 134, 171, 0.18) 0%, 
+      rgba(6, 167, 125, 0.15) 50%, 
+      rgba(241, 143, 1, 0.12) 100%
+    ) !important;
+    box-shadow: 
+      0 0 0 1px rgba(46, 134, 171, 0.3),
+      0 8px 32px rgba(6, 167, 125, 0.25),
+      0 4px 16px rgba(241, 143, 1, 0.2) !important;
+    backdrop-filter: blur(20px) saturate(200%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(200%) !important;
+    border: 2px solid rgba(46, 134, 171, 0.3) !important;
   }
 
   /* Glassmorphism card utility (molten glass)
