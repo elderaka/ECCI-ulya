@@ -10,7 +10,7 @@
   
   html {
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
     overflow-y: scroll;
     /* Hide default scrollbar */
     scrollbar-width: none; /* Firefox */
@@ -84,7 +84,6 @@
   .section-container {
     @apply min-h-screen flex items-center justify-center px-6 py-20;
     scroll-snap-align: start;
-    scroll-snap-stop: always;
   }
   
   .chart-container {

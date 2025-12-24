@@ -24,20 +24,20 @@
       </div>
       
       <div class="text-center mt-12">
-        <p class="glass-card text-xl font-semibold text-gray-900 rounded-2xl p-6 max-w-3xl mx-auto">
+        <p class="glass text-xl font-semibold text-gray-900 rounded-2xl p-6 max-w-3xl mx-auto">
           {{ t('sectionD.insight') }}
         </p>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 max-w-5xl mx-auto">
-          <div class="glass-card rounded-2xl p-6 glass-accent-congestion">
+          <div class="glass rounded-2xl p-6">
             <h4 class="font-bold text-red-700 mb-2">{{ t('sectionD.breakdown.d1to3').split(':')[0] }}</h4>
             <p class="text-sm text-gray-700">{{ t('sectionD.breakdown.d1to3').split(':')[1] }}</p>
           </div>
-          <div class="glass-card rounded-2xl p-6 glass-accent-activity">
+          <div class="glass rounded-2xl p-6">
             <h4 class="font-bold text-yellow-700 mb-2">{{ t('sectionD.breakdown.d4to7').split(':')[0] }}</h4>
             <p class="text-sm text-gray-700">{{ t('sectionD.breakdown.d4to7').split(':')[1] }}</p>
           </div>
-          <div class="glass-card rounded-2xl p-6 glass-accent-air">
+          <div class="glass rounded-2xl p-6">
             <h4 class="font-bold text-green-700 mb-2">{{ t('sectionD.breakdown.d8to10').split(':')[0] }}</h4>
             <p class="text-sm text-gray-700">{{ t('sectionD.breakdown.d8to10').split(':')[1] }}</p>
           </div>
@@ -221,7 +221,6 @@ onMounted(async () => {
   
   // Tooltip
   const tooltip = d3.select('body').append('div')
-    .attr('class', 'absolute bg-white p-3 rounded-lg shadow-xl border border-gray-200 pointer-events-none opacity-0 transition-opacity text-sm')
     .style('z-index', '1000')
   
   function showTooltip(event: MouseEvent, text: string) {

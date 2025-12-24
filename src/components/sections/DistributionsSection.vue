@@ -59,7 +59,7 @@ gsap.registerPlugin(ScrollTrigger)
 const { t } = useI18n()
 const chartRef = ref<SVGSVGElement | null>(null)
 const chartHeight = 600
-const currentStep = ref(0)
+const currentStep = ref(-1) // Start with -1 so no step is visible initially
 const stepRefs = ref<HTMLElement[]>([])
 const steps = ['step1', 'step2', 'step3']
 
@@ -196,9 +196,12 @@ onMounted(async () => {
     scrub: true,
     onUpdate: (self) => {
       const progress = self.progress
-      if (progress < 0.33) {
+      // Only show steps when user has scrolled into the section
+      if (progress < 0.1) {
+        currentStep.value = -1 // No step visible at the very start
+      } else if (progress < 0.4) {
         currentStep.value = 0
-      } else if (progress < 0.66) {
+      } else if (progress < 0.7) {
         currentStep.value = 1
       } else {
         currentStep.value = 2
