@@ -12,7 +12,7 @@
       </div>
       
       <div class="text-center mt-12">
-        <p class="text-xl font-semibold text-gray-900 bg-white/60 backdrop-blur-sm border-2 border-gray-200 rounded-2xl p-6 shadow-2xl max-w-3xl mx-auto">
+        <p class="glass-card text-xl font-semibold text-gray-900 rounded-2xl p-6 max-w-3xl mx-auto">
           {{ t('sectionC.insight') }}
         </p>
       </div>

@@ -24,20 +24,20 @@
       </div>
       
       <div class="text-center mt-12">
-        <p class="text-xl font-semibold text-gray-900 bg-white/60 backdrop-blur-sm border-2 border-gray-200 rounded-2xl p-6 shadow-2xl max-w-3xl mx-auto">
+        <p class="glass-card text-xl font-semibold text-gray-900 rounded-2xl p-6 max-w-3xl mx-auto">
           {{ t('sectionD.insight') }}
         </p>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 max-w-5xl mx-auto">
-          <div class="bg-white/60 backdrop-blur-sm border-2 border-red-300 rounded-2xl p-6 shadow-2xl">
+          <div class="glass-card rounded-2xl p-6 glass-accent-congestion">
             <h4 class="font-bold text-red-700 mb-2">{{ t('sectionD.breakdown.d1to3').split(':')[0] }}</h4>
             <p class="text-sm text-gray-700">{{ t('sectionD.breakdown.d1to3').split(':')[1] }}</p>
           </div>
-          <div class="bg-white/60 backdrop-blur-sm border-2 border-yellow-300 rounded-2xl p-6 shadow-2xl">
+          <div class="glass-card rounded-2xl p-6 glass-accent-activity">
             <h4 class="font-bold text-yellow-700 mb-2">{{ t('sectionD.breakdown.d4to7').split(':')[0] }}</h4>
             <p class="text-sm text-gray-700">{{ t('sectionD.breakdown.d4to7').split(':')[1] }}</p>
           </div>
-          <div class="bg-white/60 backdrop-blur-sm border-2 border-green-300 rounded-2xl p-6 shadow-2xl">
+          <div class="glass-card rounded-2xl p-6 glass-accent-air">
             <h4 class="font-bold text-green-700 mb-2">{{ t('sectionD.breakdown.d8to10').split(':')[0] }}</h4>
             <p class="text-sm text-gray-700">{{ t('sectionD.breakdown.d8to10').split(':')[1] }}</p>
           </div>

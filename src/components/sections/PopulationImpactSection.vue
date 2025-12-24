@@ -57,8 +57,8 @@
       
       <!-- Insight Box -->
       <div class="text-center">
-        <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-8 max-w-4xl mx-auto border-2 border-gray-200 shadow-2xl">
-          <p class="text-lg text-gray-800">{{ t('sectionPopulation.insight') }}</p>
+        <div class="glass-card p-8 max-w-4xl mx-auto">
+          <p class="text-lg text-gray-900">{{ t('sectionPopulation.insight') }}</p>
         </div>
       </div>
     </div>

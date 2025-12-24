@@ -15,7 +15,7 @@
         {{ t('hero.hook') }}
       </p>
       
-      <div class="bg-white/60 backdrop-blur-sm rounded-2xl px-8 py-6 mb-10 animate-fade-in-delay-3 shadow-2xl border-2 border-gray-200">
+      <div class="glass-card px-8 py-6 mb-10 animate-fade-in-delay-3">
         <p class="text-xl md:text-2xl font-bold italic text-gray-900">
           {{ t('hero.tagline') }}
         </p>
