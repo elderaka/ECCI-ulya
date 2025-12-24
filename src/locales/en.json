@@ -9,26 +9,26 @@
   },
   "hero": {
     "title": "Breathing, Moving, Waiting",
-    "subtitle": "How Net-Zero Changes the Way We Breathe and Travel in the UK",
-    "hook": "Net-Zero is about more than emissions; it's about how people live in the city. Are we prepared to alter our travel patterns if the city is calmer, the air is cleaner, and our bodies are healthier?",
+    "subtitle": "How Net-Zero Transforms Your Air Plus Your Commute",
+    "hook": "Net-Zero is not just about cutting emissions. It is about how you live your daily life. Imagine cleaner air, calmer streets, and a healthier you. Would you change how you travel for that?",
     "scrollDown": "Scroll to explore",
-    "tagline": "Moving more, waiting a little longer, breathing cleaner, but ultimately succeeding."
+    "tagline": "Walk more. Wait a bit. Breathe easier. Win overall."
   },
   "sectionB": {
     "title": "Three Lines, One Story",
-    "subtitle": "Air, Movement, and Traffic: Co-Benefits Across Areas",
-    "intro": "The benefits of Net-Zero are not distributed equally across the UK's 46,426 small areas. Each line tells a story of transformation.",
+    "subtitle": "Air, Movement, Traffic: How Benefits Stack Up",
+    "intro": "Net-Zero does not help everyone equally. We looked at 46,426 small areas across the UK. Each line here shows a different transformation story.",
     "step1": {
       "title": "Lower Benefit Areas",
-      "text": "About 30% of areas show low benefits across all metrics. These are often rural areas with limited infrastructure or already low pollution levels."
+      "text": "Around 30% of areas get modest gains. Think rural spots with little traffic or air that is already pretty clean. Limited infrastructure means limited change."
     },
     "step2": {
       "title": "Medium Benefit Areas",
-      "text": "40% of areas see moderate benefits. Physical activity benefits show the highest variation, with some areas reaching over 25 million GBP."
+      "text": "Then you have 40% of areas with solid improvements. Physical activity benefits vary wildly here. Some places hit over 25 million pounds."
     },
     "step3": {
       "title": "Higher Benefit Areas",
-      "text": "The top 30% of areas experience dramatic gains. These urban centers with high traffic see cleaner air translating directly into healthier, more active populations."
+      "text": "The top 30% see huge wins. Busy urban centers with heavy traffic get the biggest payoff. Cleaner air means healthier people who move more."
     },
     "legend": {
       "airQuality": "Air Quality",
@@ -40,9 +40,9 @@
   },
   "sectionC": {
     "title": "Breathing vs. Moving",
-    "subtitle": "Do Areas with Cleaner Air Also Have More Active Movement?",
-    "intro": "Across all 46,426 small areas in the UK, a clear pattern emerges: cleaner air encourages active living. Each dot represents one community's transformation.",
-    "insight": "Despite a modest R² of 0.134, the positive trend is unmistakable. Areas with cleaner air consistently show higher physical activity benefits—reducing vehicle emissions naturally encourages walking and cycling.",
+    "subtitle": "Does Cleaner Air Get You Moving?",
+    "intro": "We checked all 46,426 areas. A pattern jumped out. Cleaner air pushes people to be more active. Every dot you see is one community changing.",
+    "insight": "The correlation is not perfect (R-squared equals 0.134). But the trend is clear. Better air quality means more walking and biking. Cut car emissions and people naturally move their bodies more.",
     "outlierAir": "Highest Air Quality",
     "outlierActivity": "Highest Physical Activity",
     "trendLine": "Trend Line (R² = 0.134)",
@@ -51,37 +51,37 @@
   },
   "sectionPopulation": {
     "title": "The Human Scale",
-    "subtitle": "67 Million Lives Transformed",
-    "intro": "Behind these numbers are people—breathing cleaner air, moving more freely, adapting to new patterns. Let's see who benefits most.",
+    "subtitle": "67 Million Lives Changed",
+    "intro": "Numbers tell part of the story. But real people breathe this air. Real people walk these streets. Real people adapt. So who wins most?",
     "highBenefit": {
-      "label": "High Benefit Areas",
-      "description": "People living in areas with >£5M net benefit"
+      "label": "Big Winners",
+      "description": "People in areas gaining over 5 million pounds"
     },
     "mediumBenefit": {
-      "label": "Medium Benefit Areas",
-      "description": "People living in areas with £1-5M net benefit"
+      "label": "Solid Gains",
+      "description": "People in areas gaining 1 to 5 million pounds"
     },
     "lowBenefit": {
-      "label": "Lower Benefit Areas",
-      "description": "People living in areas with <£1M net benefit"
+      "label": "Modest Improvements",
+      "description": "People in areas gaining under 1 million pounds"
     },
-    "insight": "The majority of the UK population stands to benefit significantly from Net-Zero policies. Urban centers see the greatest gains, while rural areas require targeted infrastructure support.",
+    "insight": "Most UK residents come out ahead with Net-Zero. Cities grab the biggest wins. Rural areas need smart infrastructure to catch up.",
     "unit": "million people"
   },
   "sectionHeatmap": {
-    "title": "Where Are These Areas?",
+    "title": "Where Are These Places?",
     "subtitle": "Net Benefit Across the UK",
-    "intro": "Every community has its own story. Click any area to explore the local impact of Net-Zero policies."
+    "intro": "Every community tells a different story. Click any spot on the map to dig into how Net-Zero hits your neighborhood."
   },
   "sectionD": {
-    "title": "Is It Worth the Hassle?",
-    "subtitle": "Net Gains vs Extra Travel Time: Are We Still Better Off?",
-    "intro": "Net-Zero brings cleaner air and healthier lifestyles, but what about the trade-offs? Longer travel times and changing habits come with a cost. Let's see if it's worth it.",
-    "insight": "Yes! For 70% of areas (Deciles 4-10), the benefits far outweigh the inconveniences. Even with hassle costs ranging from -1.1 to -1.8 million GBP, the top areas achieve net benefits of up to 9.5 million GBP.",
+    "title": "Worth the Wait?",
+    "subtitle": "Big Wins vs. Extra Minutes: Do You Come Out Ahead?",
+    "intro": "Net-Zero gives you cleaner air plus better health. But what about the downsides? Longer trips. New routines. Real costs. So does it pay off?",
+    "insight": "Short answer: yes! In 70% of areas (groups 4 through 10), you win big. Hassle costs run from 1.1 to 1.8 million pounds. But top areas rack up 9.5 million pounds in benefits.",
     "breakdown": {
-      "d1to3": "D1-D3 (30%): Net benefit negative to near-zero. These areas need infrastructure improvements.",
-      "d4to7": "D4-D7 (40%): Moderate positive benefits (0.5-3M GBP). The transition is working.",
-      "d8to10": "D8-D10 (30%): Highly positive (3-9.5M GBP). These areas show the full potential of Net-Zero."
+      "d1to3": "Groups 1-3 (30%): Benefits are negative or near zero. These spots need better roads and transit.",
+      "d4to7": "Groups 4-7 (40%): Decent gains of 0.5 to 3 million pounds. The switch is working.",
+      "d8to10": "Groups 8-10 (30%): Massive wins of 3 to 9.5 million pounds. Net-Zero at full power."
     },
     "xAxis": "Area Groups (Deciles sorted by Net Benefit)",
     "yAxisPrimary": "Net Benefit (Million GBP)",

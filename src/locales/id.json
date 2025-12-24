@@ -1,4 +1,4 @@
-{
+﻿{
   "nav": {
     "hero": "Beranda",
     "distributions": "Distribusi",
@@ -9,26 +9,26 @@
   },
   "hero": {
     "title": "Bernapas, Bergerak, Menunggu",
-    "subtitle": "Bagaimana Net-Zero Mengubah Cara Kita Bernapas dan Bepergian di Inggris",
-    "hook": "Net-Zero bukan hanya tentang emisi—tetapi tentang pengalaman manusia di kota. Kalau udara lebih bersih, tubuh lebih sehat, dan kota lebih tenang—apakah kita rela sedikit mengubah kebiasaan bepergian?",
+    "subtitle": "Bagaimana Net-Zero Mengubah Udara Plus Perjalanan Anda",
+    "hook": "Net-Zero bukan cuma soal emisi. Ini soal hidup Anda sehari-hari. Bayangkan udara lebih bersih, jalan lebih tenang, tubuh lebih sehat. Mau ubah cara perjalanan Anda demi itu?",
     "scrollDown": "Gulir untuk menjelajah",
-    "tagline": "Bernapas lebih bersih, bergerak lebih banyak, menunggu sedikit lebih lama — tetapi menang secara keseluruhan."
+    "tagline": "Jalan lebih banyak. Tunggu sedikit. Napas lebih lega. Menang total."
   },
   "sectionB": {
     "title": "Tiga Garis, Satu Cerita",
-    "subtitle": "Udara, Pergerakan, dan Lalu Lintas: Ko-Manfaat Lintas Area",
-    "intro": "Manfaat Net-Zero tidak didistribusikan secara merata di 46.426 area kecil di Inggris. Setiap garis menceritakan kisah transformasi.",
+    "subtitle": "Udara, Gerakan, Macet: Manfaat yang Menumpuk",
+    "intro": "Net-Zero tidak bantu semua orang sama rata. Kami cek 46.426 area kecil di Inggris. Setiap garis di sini ceritakan kisah perubahan berbeda.",
     "step1": {
       "title": "Area Manfaat Rendah",
-      "text": "Sekitar 30% area menunjukkan manfaat rendah di semua metrik. Ini sering kali area pedesaan dengan infrastruktur terbatas atau tingkat polusi yang sudah rendah."
+      "text": "Sekitar 30% area dapat untung kecil saja. Pikirkan daerah pedesaan dengan lalu lintas minim atau udara yang sudah cukup bersih. Infrastruktur terbatas berarti perubahan terbatas."
     },
     "step2": {
       "title": "Area Manfaat Menengah",
-      "text": "40% area melihat manfaat moderat. Manfaat aktivitas fisik menunjukkan variasi tertinggi, dengan beberapa area mencapai lebih dari 25 juta GBP."
+      "text": "Lalu ada 40% area dengan perbaikan solid. Manfaat aktivitas fisik sangat bervariasi di sini. Beberapa tempat mencapai lebih dari 25 juta poundsterling."
     },
     "step3": {
       "title": "Area Manfaat Tinggi",
-      "text": "30% area teratas mengalami keuntungan dramatis. Pusat kota dengan lalu lintas tinggi ini melihat udara lebih bersih langsung diterjemahkan menjadi populasi yang lebih sehat dan aktif."
+      "text": "30% teratas dapat keuntungan besar. Pusat kota sibuk dengan lalu lintas padat dapat hasil terbesar. Udara lebih bersih artinya orang lebih sehat dan lebih aktif."
     },
     "legend": {
       "airQuality": "Kualitas Udara",
@@ -40,9 +40,9 @@
   },
   "sectionC": {
     "title": "Bernapas vs. Bergerak",
-    "subtitle": "Apakah Area dengan Udara Lebih Bersih Juga Memiliki Pergerakan Lebih Aktif?",
-    "intro": "Di semua 46.426 area kecil di Inggris, pola yang jelas muncul: udara bersih mendorong kehidupan aktif. Setiap titik mewakili transformasi satu komunitas.",
-    "insight": "Meskipun R² hanya 0,134, tren positifnya tidak dapat disangkal. Area dengan udara lebih bersih secara konsisten menunjukkan manfaat aktivitas fisik yang lebih tinggi—mengurangi emisi kendaraan secara alami mendorong berjalan dan bersepeda.",
+    "subtitle": "Udara Bersih Bikin Anda Lebih Aktif?",
+    "intro": "Kami cek semua 46.426 area. Pola jelas muncul. Udara bersih dorong orang jadi lebih aktif. Setiap titik yang Anda lihat adalah satu komunitas yang berubah.",
+    "insight": "Korelasinya tidak sempurna (R-kuadrat sama dengan 0,134). Tapi tren-nya jelas. Kualitas udara lebih baik artinya lebih banyak jalan kaki plus bersepeda. Kurangi emisi mobil maka orang otomatis gerakkan tubuh lebih banyak.",
     "outlierAir": "Kualitas Udara Tertinggi",
     "outlierActivity": "Aktivitas Fisik Tertinggi",
     "trendLine": "Garis Tren (R² = 0,134)",
@@ -52,36 +52,36 @@
   "sectionPopulation": {
     "title": "Skala Manusia",
     "subtitle": "67 Juta Kehidupan Berubah",
-    "intro": "Di balik angka-angka ini adalah manusia—bernapas udara lebih bersih, bergerak lebih bebas, beradaptasi dengan pola baru. Mari lihat siapa yang paling diuntungkan.",
+    "intro": "Angka ceritakan sebagian kisah. Tapi orang nyata yang hirup udara ini. Orang nyata yang jalan di jalan ini. Orang nyata yang adaptasi. Jadi siapa yang paling untung?",
     "highBenefit": {
-      "label": "Area Manfaat Tinggi",
-      "description": "Orang yang tinggal di area dengan manfaat bersih >£5 juta"
+      "label": "Pemenang Besar",
+      "description": "Orang di area yang dapat lebih dari 5 juta poundsterling"
     },
     "mediumBenefit": {
-      "label": "Area Manfaat Menengah",
-      "description": "Orang yang tinggal di area dengan manfaat bersih £1-5 juta"
+      "label": "Untung Solid",
+      "description": "Orang di area yang dapat 1 sampai 5 juta poundsterling"
     },
     "lowBenefit": {
-      "label": "Area Manfaat Rendah",
-      "description": "Orang yang tinggal di area dengan manfaat bersih <£1 juta"
+      "label": "Perbaikan Sederhana",
+      "description": "Orang di area yang dapat di bawah 1 juta poundsterling"
     },
-    "insight": "Mayoritas populasi Inggris akan mendapat manfaat signifikan dari kebijakan Net-Zero. Pusat kota melihat keuntungan terbesar, sementara area pedesaan memerlukan dukungan infrastruktur yang ditargetkan.",
+    "insight": "Sebagian besar penduduk Inggris menang dengan Net-Zero. Kota dapat kemenangan terbesar. Daerah pedesaan butuh infrastruktur pintar untuk kejar ketinggalan.",
     "unit": "juta orang"
   },
   "sectionHeatmap": {
-    "title": "Di Mana Area-Area Ini?",
+    "title": "Di Mana Tempat-Tempat Ini?",
     "subtitle": "Manfaat Bersih di Seluruh Inggris",
-    "intro": "Setiap komunitas memiliki ceritanya sendiri. Klik area mana pun untuk menjelajahi dampak lokal dari kebijakan Net-Zero."
+    "intro": "Setiap komunitas ceritakan kisah berbeda. Klik titik mana pun di peta untuk gali bagaimana Net-Zero kena lingkungan Anda."
   },
   "sectionD": {
-    "title": "Apakah Sepadan dengan Repotnya?",
-    "subtitle": "Keuntungan Bersih vs Waktu Perjalanan Ekstra: Apakah Kita Tetap Lebih Baik?",
-    "intro": "Net-Zero membawa udara lebih bersih dan gaya hidup lebih sehat, tetapi bagaimana dengan trade-off-nya? Waktu perjalanan lebih lama dan kebiasaan berubah datang dengan biaya. Mari kita lihat apakah ini sepadan.",
-    "insight": "Ya! Untuk 70% area (Desil 4-10), manfaatnya jauh lebih besar daripada ketidaknyamanannya. Bahkan dengan biaya repot berkisar dari -1,1 hingga -1,8 juta GBP, area teratas mencapai manfaat bersih hingga 9,5 juta GBP.",
+    "title": "Sepadan Tunggu?",
+    "subtitle": "Untung Besar vs. Menit Ekstra: Anda Menang?",
+    "intro": "Net-Zero kasih Anda udara bersih plus kesehatan lebih baik. Tapi bagaimana soal kerugiannya? Perjalanan lebih lama. Rutinitas baru. Biaya nyata. Jadi apakah ini untung?",
+    "insight": "Jawaban singkat: ya! Di 70% area (kelompok 4 sampai 10), Anda menang besar. Biaya repot berkisar 1,1 sampai 1,8 juta poundsterling. Tapi area teratas kumpulkan 9,5 juta poundsterling dalam manfaat.",
     "breakdown": {
-      "d1to3": "D1-D3 (30%): Manfaat bersih negatif hingga mendekati nol. Area ini memerlukan perbaikan infrastruktur.",
-      "d4to7": "D4-D7 (40%): Manfaat positif moderat (0,5-3 Juta GBP). Transisi berjalan baik.",
-      "d8to10": "D8-D10 (30%): Sangat positif (3-9,5 Juta GBP). Area ini menunjukkan potensi penuh Net-Zero."
+      "d1to3": "Kelompok 1-3 (30%): Manfaat negatif atau hampir nol. Tempat ini butuh jalan plus transportasi lebih baik.",
+      "d4to7": "Kelompok 4-7 (40%): Untung lumayan 0,5 sampai 3 juta poundsterling. Peralihan berhasil.",
+      "d8to10": "Kelompok 8-10 (30%): Kemenangan besar 3 sampai 9,5 juta poundsterling. Net-Zero dengan kekuatan penuh."
     },
     "xAxis": "Kelompok Area (Desil diurutkan berdasarkan Manfaat Bersih)",
     "yAxisPrimary": "Manfaat Bersih (Juta GBP)",
