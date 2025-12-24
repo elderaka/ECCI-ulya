@@ -345,14 +345,37 @@ onMounted(async () => {
       if (map) map.getCanvas().style.cursor = ''
     })
 
-    // Apply colors based on data
-    const colorExpression: any = ['match', ['get', 'small_area']]
+    // Apply colors based on aggregated data for nations
+    const nationColorExpression: any = ['match', ['get', 'lookups_nation']]
+    const nationAggregates = new Map<string, number>()
+    
     areaData.forEach(d => {
-      colorExpression.push(d.small_area, getColor(d.net_benefit_million_gbp))
+      const current = nationAggregates.get(d.nation) || 0
+      nationAggregates.set(d.nation, current + d.net_benefit_million_gbp)
     })
-    colorExpression.push('#cccccc') // Default
+    
+    nationAggregates.forEach((netBenefit, nation) => {
+      nationColorExpression.push(nation, getColor(netBenefit))
+    })
+    nationColorExpression.push('#cccccc') // Default
+    
+    map.setPaintProperty('nations-fill', 'fill-color', nationColorExpression)
 
-    map.setPaintProperty('areas-fill', 'fill-color', colorExpression)
+    // Apply colors based on aggregated data for local authorities
+    const laColorExpression: any = ['match', ['get', 'lookups_local_authority']]
+    const laAggregates = new Map<string, number>()
+    
+    areaData.forEach(d => {
+      const current = laAggregates.get(d.local_authority) || 0
+      laAggregates.set(d.local_authority, current + d.net_benefit_million_gbp)
+    })
+    
+    laAggregates.forEach((netBenefit, la) => {
+      laColorExpression.push(la, getColor(netBenefit))
+    })
+    laColorExpression.push('#cccccc') // Default
+    
+    map.setPaintProperty('las-fill', 'fill-color', laColorExpression)
 
     console.log('🗺️ Heatmap loaded with', areaData.length, 'areas')
     
