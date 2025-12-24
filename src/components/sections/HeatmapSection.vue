@@ -170,14 +170,14 @@ const switchMapType = (type: 'nation' | 'localAuthority') => {
 onMounted(async () => {
   if (!mapContainer.value) return
 
-  // Intercept global fetch to add ngrok bypass header
+  // Intercept global fetch to add ngrok bypass as query parameter
   const originalFetch = window.fetch
   window.fetch = async (input: RequestInfo | URL, init?: RequestInit): Promise<Response> => {
-    const url = typeof input === 'string' ? input : input instanceof URL ? input.href : input.url
+    let url = typeof input === 'string' ? input : input instanceof URL ? input.href : input.url
     if (url.includes('ngrok')) {
-      const headers = new Headers(init?.headers || {})
-      headers.set('ngrok-skip-browser-warning', 'true')
-      return originalFetch(input, { ...init, headers })
+      // Add query parameter instead of header to bypass ngrok warning
+      url = url + (url.includes('?') ? '&' : '?') + 'ngrok-skip-browser-warning=true'
+      return originalFetch(url, init)
     }
     return originalFetch(input, init)
   }
