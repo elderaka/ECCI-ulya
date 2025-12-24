@@ -174,21 +174,23 @@ onMounted(async () => {
   const areaData = await loadCSVData()
   const dataMap = new Map(areaData.map(d => [d.small_area, d]))
 
-  // Register PMTiles protocol with custom headers to bypass ngrok warning
+  // Register PMTiles protocol
   const protocol = new Protocol()
-  maplibregl.addProtocol('pmtiles', (request) => {
-    return protocol.tile({
-      ...request,
-      headers: {
-        ...request.headers,
-        'ngrok-skip-browser-warning': 'true'
-      }
-    })
-  })
+  maplibregl.addProtocol('pmtiles', protocol.tile)
 
   // Initialize map
   map = new maplibregl.Map({
     container: mapContainer.value,
+    transformRequest: (url, resourceType) => {
+      // Add ngrok bypass header for tile requests
+      if (url.includes('ngrok')) {
+        return {
+          url: url,
+          headers: { 'ngrok-skip-browser-warning': 'true' }
+        }
+      }
+      return { url }
+    },
     style: {
       version: 8,
       sources: {
