@@ -174,9 +174,17 @@ onMounted(async () => {
   const areaData = await loadCSVData()
   const dataMap = new Map(areaData.map(d => [d.small_area, d]))
 
-  // Register PMTiles protocol
+  // Register PMTiles protocol with custom headers to bypass ngrok warning
   const protocol = new Protocol()
-  maplibregl.addProtocol('pmtiles', protocol.tile)
+  maplibregl.addProtocol('pmtiles', (request) => {
+    return protocol.tile({
+      ...request,
+      headers: {
+        ...request.headers,
+        'ngrok-skip-browser-warning': 'true'
+      }
+    })
+  })
 
   // Initialize map
   map = new maplibregl.Map({
