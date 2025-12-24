@@ -170,33 +170,29 @@ const switchMapType = (type: 'nation' | 'localAuthority') => {
 onMounted(async () => {
   if (!mapContainer.value) return
 
+  // Intercept global fetch to add ngrok bypass header
+  const originalFetch = window.fetch
+  window.fetch = async (input: RequestInfo | URL, init?: RequestInit): Promise<Response> => {
+    const url = typeof input === 'string' ? input : input instanceof URL ? input.href : input.url
+    if (url.includes('ngrok')) {
+      const headers = new Headers(init?.headers || {})
+      headers.set('ngrok-skip-browser-warning', 'true')
+      return originalFetch(input, { ...init, headers })
+    }
+    return originalFetch(input, init)
+  }
+
   // Load CSV data
   const areaData = await loadCSVData()
   const dataMap = new Map(areaData.map(d => [d.small_area, d]))
 
-  // Register PMTiles protocol with custom fetch to bypass ngrok warning
-  const customFetch = async (url: RequestInfo | URL, init?: RequestInit): Promise<Response> => {
-    const headers = new Headers(init?.headers || {})
-    headers.set('ngrok-skip-browser-warning', 'true')
-    return fetch(url, { ...init, headers })
-  }
-  
-  const protocol = new Protocol({ fetch: customFetch })
+  // Register PMTiles protocol
+  const protocol = new Protocol()
   maplibregl.addProtocol('pmtiles', protocol.tile)
 
   // Initialize map
   map = new maplibregl.Map({
     container: mapContainer.value,
-    transformRequest: (url, resourceType) => {
-      // Add ngrok bypass header for tile requests
-      if (url.includes('ngrok')) {
-        return {
-          url: url,
-          headers: { 'ngrok-skip-browser-warning': 'true' }
-        }
-      }
-      return { url }
-    },
     style: {
       version: 8,
       sources: {
